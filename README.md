@@ -22,3 +22,7 @@ Volcano Eruptions
 - [ ] Display volcano information
 - [ ] Add search by volcano name
 - [ ] Show the country, type, and elevation for matching volcanoes
+
+## Accountability Partner
+
+Cindy — [@SnDyMrn13](https://github.com/SnDyMrn13)
