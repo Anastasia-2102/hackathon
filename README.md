@@ -25,4 +25,4 @@ Volcano Eruptions
 
 ## Accountability Partner
 
-Cindy — [@SnDyMrn13](https://github.com/SnDyMrn13)
+Cindy - [@SnDyMrn13](https://github.com/SnDyMrn13)
