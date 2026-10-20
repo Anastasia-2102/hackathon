@@ -1,16 +1,40 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Volcano Atlas
 
-Currently, two official plugins are available:
+A React app that helps people explore volcano information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Problem
 
-## React Compiler
+A curious person needs a simple way to find information about volcanoes because the data can be difficult to explore. My page will let you search for a volcano by name and show its country, type, and elevation.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Dataset
 
-## Expanding the ESLint configuration
+Volcano Eruptions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Fields
+
+- Volcano Name
+- Country
+- Type
+- Last Known Eruption
+- Region
+- Latitude
+- Longitude
+- Elevation
+- Dominant Rock Type
+- Tectonic Setting
+
+## Plan
+
+- [ ] Display volcano information
+- [ ] Add search by volcano name
+- [ ] Show the country, type, and elevation for matching volcanoes
+
+## Accountability Partner
+
+Cindy - [@SnDyMrn13](https://github.com/SnDyMrn13)
+
+## Links
+
+- GitHub: https://github.com/Anastasia-2102/hackathon
+- Live App: Add your Netlify URL here after deployment
