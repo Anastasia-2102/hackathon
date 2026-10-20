@@ -1,24 +1,43 @@
 # Volcano Atlas
 
+A React app that helps people explore volcano information.
+
 ## Problem
+
 A curious person needs a simple way to find information about volcanoes because the data can be difficult to explore. My page will let you search for a volcano by name and show its country, type, and elevation.
 
 ## Dataset
+
 Volcano Eruptions
 
 ## Fields
-- Volcano Name
-- Country
-- Type
-- Last Known Eruption
-- Region
-- Latitude
-- Longitude
-- Elevation
-- Dominant Rock Type
-- Tectonic Setting
+
+| Field | Example value |
+| --- | --- |
+| Volcano Name | Mount St. Helens |
+| Country | United States |
+| Type | Stratovolcano |
+| Last Known Eruption | 2008 |
+| Region | North America |
+| Latitude | 46.20 |
+| Longitude | -122.18 |
+| Elevation | 2,550 m |
+| Dominant Rock Type | Andesite |
+| Tectonic Setting | Convergent boundary |
+
+## Sections
+
+- Header with the title Volcano Atlas
+- Description of the project
+- Search input for volcano names
+- Volcano information showing country, type, and elevation
+
+## User action
+
+- A visitor types a volcano name into the search box, and the page shows the matching volcano's country, type, and elevation.
 
 ## Plan
+
 - [ ] Display volcano information
 - [ ] Add search by volcano name
 - [ ] Show the country, type, and elevation for matching volcanoes
@@ -26,3 +45,8 @@ Volcano Eruptions
 ## Accountability Partner
 
 Cindy - [@SnDyMrn13](https://github.com/SnDyMrn13)
+
+## Links
+
+- GitHub: https://github.com/Anastasia-2102/hackathon
+- Live App: https://volcano-atlas-anastasia.netlify.app
