@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import useFetchData from './useFetchData.js'
 import RecordCard from './RecordCard.jsx'
 
@@ -6,9 +7,19 @@ function App() {
     'https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=20'
   )
 
+const [query, setQuery] = useState("")
+
+const search = () => {
+  setQuery(document.querySelector("#query").value)
+}
+
   if (loading) {
     return <p>Loading…</p>
   }
+
+const shown = records.filter((record) =>
+  record["Volcano Name"].toLowerCase().includes(query.toLowerCase())
+)
 
   return (
     <div>
@@ -19,7 +30,11 @@ function App() {
         search for a volcano by name and show its country, type, and elevation.
       </p>
       <p>{error}</p>
-      {records.map((record) => <RecordCard key={record.id} record={record} />)}
+      <input type="text" id="query" placeholder="Search volcanoes" />
+      <button onClick={search}>Search</button>
+      {shown.map((record) => 
+      <RecordCard key={record.id} record={record} />
+    )}
     </div>
   )
 }
