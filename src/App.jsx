@@ -19,8 +19,7 @@ function App() {
         search for a volcano by name and show its country, type, and elevation.
       </p>
       <p>{error}</p>
-      <RecordCard record={records[0]} />
-      <RecordCard record={records[1]} />
+      {records.map((record) => <RecordCard key={record.id} record={record} />)}
     </div>
   )
 }
