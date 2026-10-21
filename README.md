@@ -10,7 +10,7 @@ A curious person needs a simple way to find information about volcanoes because 
 
 Volcano Eruptions
 
-## Fields
+## Data
 
 | Field | Example value |
 | --- | --- |
