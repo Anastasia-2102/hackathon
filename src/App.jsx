@@ -1,11 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useFetchData from './useFetchData.js'
 import RecordCard from './RecordCard.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState(() => {
+  const savedFavorites = localStorage.getItem('volcanoFavorites')
+  return savedFavorites ? JSON.parse(savedFavorites) : []
+})
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
+  useEffect(() => {
+  localStorage.setItem('volcanoFavorites', JSON.stringify(favorites))
+}, [favorites])
 
   const { records, loading, error } = useFetchData(
     `https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=20&search=${query}`
