@@ -5,6 +5,7 @@ import RecordCard from './RecordCard.jsx'
 function App() {
   const [query, setQuery] = useState("")
   const [favorites, setFavorites] = useState([])
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
 
   const { records, loading, error } = useFetchData(
     `https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=20&search=${query}`
@@ -20,6 +21,13 @@ function App() {
       : [...currentFavorites, record]
   )
 }
+
+const displayedRecords = showFavoritesOnly
+  ? records.filter((record) =>
+      favorites.some((item) => item.id === record.id)
+    )
+  : records
+
   if (loading) {
     return <p>Loading…</p>
   }
@@ -49,10 +57,15 @@ function App() {
   </form>
   <hr />
   <p>❤️ Favorites: {favorites.length}</p>
-      {records.length === 0 ? (
+
+<button onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}>
+  {showFavoritesOnly ? 'Show All Volcanoes' : 'Show Favorites Only'}
+</button>
+
+      {displayedRecords.length === 0 ? (
   <p>No volcanoes found. Try another name.</p>
 ) : (
-  records.map((record) => (
+  displayedRecords.map((record) => (
   <RecordCard
     key={record.id}
     record={record}
