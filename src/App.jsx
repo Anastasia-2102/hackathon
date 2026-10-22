@@ -4,6 +4,7 @@ import RecordCard from './RecordCard.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
+  const [favorites, setFavorites] = useState([])
 
   const { records, loading, error } = useFetchData(
     `https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=20&search=${query}`
@@ -12,7 +13,13 @@ function App() {
   const search = () => {
     setQuery(document.querySelector("#query").value)
   }
-
+  const toggleFavorite = (record) => {
+  setFavorites((currentFavorites) =>
+    currentFavorites.some((item) => item.id === record.id)
+      ? currentFavorites.filter((item) => item.id !== record.id)
+      : [...currentFavorites, record]
+  )
+}
   if (loading) {
     return <p>Loading…</p>
   }
@@ -41,12 +48,18 @@ function App() {
   <button type="submit">Search Volcanoes</button>
   </form>
   <hr />
+  <p>❤️ Favorites: {favorites.length}</p>
       {records.length === 0 ? (
   <p>No volcanoes found. Try another name.</p>
 ) : (
   records.map((record) => (
-    <RecordCard key={record.id} record={record} />
-  ))
+  <RecordCard
+    key={record.id}
+    record={record}
+    favorite={favorites.some((item) => item.id === record.id)}
+    onToggleFavorite={() => toggleFavorite(record)}
+  />
+))
 )}
 </main>
   )
