@@ -20,20 +20,35 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Volcano Atlas</h1>
-      <p>
-        A curious person needs a simple way to find information about volcanoes
-        because the data can be difficult to explore. My page will let you
-        search for a volcano by name and show its country, type, and elevation.
-      </p>
+<main className="container">
+  <header>
+    <h1>🌋 Volcano Atlas</h1>
+    <p>
+    Explore volcanoes around the world.
+    Search by name to discover their country and type.
+    </p>
+  </header>
       <p>{error}</p>
-      <input type="text" id="query" placeholder="Search volcanoes" />
-      <button onClick={search}>Search</button>
-      {records.map((record) => (
-      <RecordCard key={record.id} record={record} />
-    ))}
-    </div>
+  <form onSubmit={(event) => {
+  event.preventDefault()
+  search()
+}}>
+  <input
+    type="text"
+    id="query"
+    placeholder="Search volcanoes by name..."
+  />
+  <button type="submit">Search Volcanoes</button>
+  </form>
+  <hr />
+      {records.length === 0 ? (
+  <p>No volcanoes found. Try another name.</p>
+) : (
+  records.map((record) => (
+    <RecordCard key={record.id} record={record} />
+  ))
+)}
+</main>
   )
 }
 
