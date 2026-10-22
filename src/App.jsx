@@ -3,23 +3,21 @@ import useFetchData from './useFetchData.js'
 import RecordCard from './RecordCard.jsx'
 
 function App() {
+  const [query, setQuery] = useState("")
+
   const { records, loading, error } = useFetchData(
-    'https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=20'
+    `https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=20&search=${query}`
   )
 
-const [query, setQuery] = useState("")
-
-const search = () => {
-  setQuery(document.querySelector("#query").value)
-}
+  const search = () => {
+    setQuery(document.querySelector("#query").value)
+  }
 
   if (loading) {
     return <p>Loading…</p>
   }
 
-const shown = records.filter((record) =>
-  record["Volcano Name"].toLowerCase().includes(query.toLowerCase())
-)
+
 
   return (
     <div>
@@ -32,9 +30,9 @@ const shown = records.filter((record) =>
       <p>{error}</p>
       <input type="text" id="query" placeholder="Search volcanoes" />
       <button onClick={search}>Search</button>
-      {shown.map((record) => 
+      {records.map((record) => (
       <RecordCard key={record.id} record={record} />
-    )}
+    ))}
     </div>
   )
 }
