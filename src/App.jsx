@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import useFetchData from './useFetchData.js'
 import RecordCard from './RecordCard.jsx'
+import VolcanoMap from './VolcanoMap.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
@@ -62,6 +63,8 @@ const displayedRecords = showFavoritesOnly
   <button type="submit">Search Volcanoes</button>
   </form>
   <hr />
+  <h2>🌍 Volcano Map</h2>
+  <VolcanoMap records={displayedRecords} />
   <p>❤️ Favorites: {favorites.length}</p>
 
 <button onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}>
