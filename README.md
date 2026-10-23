@@ -50,3 +50,7 @@ Cindy - [@SnDyMrn13](https://github.com/SnDyMrn13)
 
 - GitHub: https://github.com/Anastasia-2102/hackathon
 - Live App: https://volcano-atlas-anastasia.netlify.app
+
+## Project Reflection
+
+I am proud of building an interactive Volcano Atlas with search, favorites, and a map. One challenge was connecting the React components and managing the data from the API. Next, I would like to improve the design and add more volcano information and photos.

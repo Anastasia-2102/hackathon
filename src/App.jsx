@@ -4,6 +4,7 @@ import VolcanoMap from './VolcanoMap.jsx'
 import SearchBar from './SearchBar.jsx'
 import FavoritesFilter from './FavoritesFilter.jsx'
 import VolcanoList from './VolcanoList.jsx'
+import Footer from './Footer.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
@@ -74,7 +75,7 @@ const displayedRecords = showFavoritesOnly
     favorites={favorites}
     onToggleFavorite={toggleFavorite}
   />
-
+  <Footer />
 </main>
   )
 }
