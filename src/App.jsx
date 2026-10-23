@@ -3,6 +3,7 @@ import useFetchData from './useFetchData.js'
 import RecordCard from './RecordCard.jsx'
 import VolcanoMap from './VolcanoMap.jsx'
 import SearchBar from './SearchBar.jsx'
+import FavoritesFilter from './FavoritesFilter.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
@@ -58,9 +59,10 @@ const displayedRecords = showFavoritesOnly
   <VolcanoMap records={displayedRecords} />
   <p>❤️ Favorites: {favorites.length}</p>
 
-<button onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}>
-  {showFavoritesOnly ? 'Show All Volcanoes' : 'Show Favorites Only'}
-</button>
+  <FavoritesFilter
+  showFavoritesOnly={showFavoritesOnly}
+  onToggle={() => setShowFavoritesOnly(!showFavoritesOnly)}
+  />
 
       {displayedRecords.length === 0 ? (
   <p>No volcanoes found. Try another name.</p>
