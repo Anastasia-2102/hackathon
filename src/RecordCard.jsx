@@ -1,4 +1,8 @@
+import { useState } from 'react'
+import VolcanoDetails from './VolcanoDetails.jsx'
+
 function RecordCard({ record, favorite, onToggleFavorite }) {
+  const [showDetails, setShowDetails] = useState(false)
   return (
     <article className="volcano-card">
   {record["Volcano Name"] === "Vesuvius" ? (
@@ -60,6 +64,12 @@ function RecordCard({ record, favorite, onToggleFavorite }) {
       <button onClick={onToggleFavorite}>
         {favorite ? '❤️ Favorited' : '🤍 Add to Favorites'}
       </button>
+
+      <button onClick={() => setShowDetails(!showDetails)}>
+  {showDetails ? 'Hide Details' : 'View Details'}
+      </button>
+
+  {showDetails && <VolcanoDetails record={record} />}
 
       <p>Country: {record.Country}</p>
       <p>Type: {record.Type}</p>
