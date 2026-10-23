@@ -71,14 +71,16 @@ const displayedRecords = showFavoritesOnly
       {displayedRecords.length === 0 ? (
   <p>No volcanoes found. Try another name.</p>
 ) : (
-  displayedRecords.map((record) => (
-  <RecordCard
-    key={record.id}
-    record={record}
-    favorite={favorites.some((item) => item.id === record.id)}
-    onToggleFavorite={() => toggleFavorite(record)}
-  />
-))
+  <div className="volcano-grid">
+  {displayedRecords.map((record) => (
+    <RecordCard
+      key={record.id}
+      record={record}
+      favorite={favorites.some((item) => item.id === record.id)}
+      onToggleFavorite={() => toggleFavorite(record)}
+    />
+  ))}
+</div>
 )}
 </main>
   )
