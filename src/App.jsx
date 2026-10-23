@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import useFetchData from './useFetchData.js'
 import RecordCard from './RecordCard.jsx'
 import VolcanoMap from './VolcanoMap.jsx'
+import SearchBar from './SearchBar.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
@@ -51,17 +52,7 @@ const displayedRecords = showFavoritesOnly
     </p>
   </header>
       <p>{error}</p>
-  <form onSubmit={(event) => {
-  event.preventDefault()
-  search()
-}}>
-  <input
-    type="text"
-    id="query"
-    placeholder="Search volcanoes by name..."
-  />
-  <button type="submit">Search Volcanoes</button>
-  </form>
+  <SearchBar onSearch={search} />
   <hr />
   <h2>🌍 Volcano Map</h2>
   <VolcanoMap records={displayedRecords} />
