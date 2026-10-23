@@ -7,6 +7,7 @@ import VolcanoList from './VolcanoList.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
+  const [searchText, setSearchText] = useState("")
   const [favorites, setFavorites] = useState(() => {
   const savedFavorites = localStorage.getItem('volcanoFavorites')
   return savedFavorites ? JSON.parse(savedFavorites) : []
@@ -21,8 +22,8 @@ function App() {
   )
 
   const search = () => {
-    setQuery(document.querySelector("#query").value)
-  }
+  setQuery(searchText)
+}
   const toggleFavorite = (record) => {
   setFavorites((currentFavorites) =>
     currentFavorites.some((item) => item.id === record.id)
@@ -53,7 +54,11 @@ const displayedRecords = showFavoritesOnly
     </p>
   </header>
       <p>{error}</p>
-  <SearchBar onSearch={search} />
+  <SearchBar
+    searchText={searchText}
+    onSearchTextChange={setSearchText}
+    onSearch={search}
+  />
   <hr />
   <h2>🌍 Volcano Map</h2>
   <VolcanoMap records={displayedRecords} />
