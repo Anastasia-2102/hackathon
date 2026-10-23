@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import useFetchData from './useFetchData.js'
-import RecordCard from './RecordCard.jsx'
 import VolcanoMap from './VolcanoMap.jsx'
 import SearchBar from './SearchBar.jsx'
 import FavoritesFilter from './FavoritesFilter.jsx'
+import VolcanoList from './VolcanoList.jsx'
 
 function App() {
   const [query, setQuery] = useState("")
@@ -64,20 +64,12 @@ const displayedRecords = showFavoritesOnly
   onToggle={() => setShowFavoritesOnly(!showFavoritesOnly)}
   />
 
-      {displayedRecords.length === 0 ? (
-  <p>No volcanoes found. Try another name.</p>
-) : (
-  <div className="volcano-grid">
-  {displayedRecords.map((record) => (
-    <RecordCard
-      key={record.id}
-      record={record}
-      favorite={favorites.some((item) => item.id === record.id)}
-      onToggleFavorite={() => toggleFavorite(record)}
-    />
-  ))}
-</div>
-)}
+  <VolcanoList
+    records={displayedRecords}
+    favorites={favorites}
+    onToggleFavorite={toggleFavorite}
+  />
+
 </main>
   )
 }
