@@ -198,6 +198,10 @@ header p {
   text-align: center;
 }
 
+.site-footer h2 {
+  color: white;
+}
+
 .site-footer h2,
 .site-footer p,
 .site-footer span {
