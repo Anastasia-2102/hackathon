@@ -51,7 +51,6 @@
 }
 
 body {
-  margin: 0;
   background: #f4f7fb;
 }
 
@@ -234,4 +233,61 @@ header p {
   padding-top: 1rem;
   border-top: 1px solid #496176;
   font-size: 0.9rem;
+}
+
+.volcano-card button {
+  margin: 0.4rem;
+  padding: 0.65rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #17324d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.volcano-card button:hover {
+  background: #245477;
+}
+
+.volcano-grid {
+  margin-top: 1.5rem;
+}
+
+.favorites-count {
+  margin-top: 1.5rem;
+}
+
+.search-container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-container input {
+  display: block;
+  width: 100%;
+  border: 2px solid #bfdbfe;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #17324d;
+  font-size: 18px;
+}
+
+.search-container button {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  background: #17324d;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
 }

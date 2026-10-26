@@ -19,7 +19,7 @@ function App() {
 }, [favorites])
 
   const { records, loading, error } = useFetchData(
-    `https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=20&search=${query}`
+    `https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records?limit=21&search=${query}`
   )
 
   const search = () => {
@@ -55,15 +55,19 @@ const displayedRecords = showFavoritesOnly
     </p>
   </header>
       <p>{error}</p>
+  
+  <div className="search-container">
   <SearchBar
     searchText={searchText}
     onSearchTextChange={setSearchText}
     onSearch={search}
   />
+  </div>
+
   <hr />
   <h2>🌍 Volcano Map</h2>
-  <VolcanoMap records={displayedRecords} />
-  <p>❤️ Favorites: {favorites.length}</p>
+  <VolcanoMap />
+  <p className="favorites-count">❤️ Favorites: {favorites.length}</p>
 
   <FavoritesFilter
   showFavoritesOnly={showFavoritesOnly}
