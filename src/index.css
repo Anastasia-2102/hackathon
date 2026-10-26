@@ -51,7 +51,8 @@
 }
 
 body {
-  background: #f4f7fb;
+background: #f4f7fb;
+margin: 0;
 }
 
 #root {

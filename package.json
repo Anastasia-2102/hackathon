@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "dependencies": {   
     "@picocss/pico": "^2.1.1",
     "leaflet": "^1.9.4",
     "react": "^19.3.1",

@@ -26,6 +26,7 @@ Volcano Eruptions
 | Tectonic Setting | Convergent boundary |
 
 ## Sections
+
 - Header with the title Volcano Atlas
 - Description of the project
 - Search input for volcano names
@@ -57,6 +58,7 @@ Cindy - [@SnDyMrn13](https://github.com/SnDyMrn13)
 I am proud of building an interactive Volcano Atlas with search, favorites, and a map. One challenge was connecting the React components and managing the data from the API. Next, I would like to improve the design and add more volcano information and photos.
 
 ## Changes
+
 - Connected the Volcano Eruptions dataset to the app through the API
 - Added volcano search
 - Added favorite buttons and a Favorites filter
@@ -64,6 +66,6 @@ I am proud of building an interactive Volcano Atlas with search, favorites, and 
 - Added a basic world map
 
 ## Data Source
+
 - Dataset: Volcano Eruptions
 - API: https://student-data-api.anastasiaketchersid-757.workers.dev/api/v1/datasets/volcano-eruptions/records
-
