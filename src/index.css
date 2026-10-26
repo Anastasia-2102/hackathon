@@ -139,17 +139,12 @@ code {
   margin-top: 1.5rem;
 }
 
-.volcano-card {
-  margin: 0;
-  height: 100%;
-}
-
 header {
   padding: 2.5rem 1.5rem;
   margin-bottom: 2rem;
   background: #17324d;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(23, 50, 77, 0.18);
+  box-shadow: 0 4px 8px #0002;
 }
 
 header h1 {
@@ -160,7 +155,6 @@ header h1 {
 
 header p {
   color: #dbeafe;
-  line-height: 1.7;
 }
 
 .volcano-photo-placeholder {
@@ -170,12 +164,11 @@ header p {
   min-height: 160px;
   margin-bottom: 1rem;
   border-radius: 12px;
-  background: linear-gradient(135deg, #e0f2fe, #ffedd5);
+  background: lightblue;
   font-size: 4rem;
 }
 
 .volcano-photo {
-  display: block;
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -196,16 +189,11 @@ header p {
   margin-bottom: 0.75rem;
 }
 
-.volcano-details p {
-  margin-bottom: 0.5rem;
-}
-
-
 .site-footer {
   margin-top: 3rem;
   padding: 2rem;
   background: #17324d;
-  color: #ffffff;
+  color: white;
   border-radius: 16px;
   text-align: center;
 }
@@ -213,12 +201,7 @@ header p {
 .site-footer h2,
 .site-footer p,
 .site-footer span {
-  color: #ffffff;
-}
-
-.site-footer p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  color: white;
 }
 
 .footer-description {
@@ -228,12 +211,9 @@ header p {
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid #496176;
-  font-size: 0.9rem;
 }
 
 .volcano-card button {
@@ -242,8 +222,7 @@ header p {
   border: none;
   border-radius: 8px;
   background: #17324d;
-  color: #ffffff;
-  cursor: pointer;
+  color: white;
 }
 
 .volcano-card button:hover {
@@ -260,21 +239,16 @@ header p {
 
 .search-container {
   max-width: 700px;
-  width: 100%;
   margin: 0 auto;
 }
 
 .search-container form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   gap: 8px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .search-container input {
-  display: block;
   width: 100%;
   border: 2px solid #bfdbfe;
   border-radius: 10px;
@@ -284,7 +258,6 @@ header p {
 }
 
 .search-container button {
-  display: block;
   width: 100%;
   border-radius: 10px;
   background: #17324d;
